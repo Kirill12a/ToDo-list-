@@ -8,12 +8,17 @@
 import UIKit
 import RealmSwift
 
+
+/*
+ Выполнение задачи - свайп влево
+ Изменение задачи - нажатие на ячейку
+ */
+
 class ViewController: UIViewController
 {
 
   let tableView = UITableView()
   var safeArea: UILayoutGuide!
-//  var characters = ["Link", "Zelda", "Ganondorf", "Midna"]
 
   var characters: Results<Item>!
 
@@ -26,6 +31,8 @@ class ViewController: UIViewController
 
     let realm = try! Realm()
     self.characters = realm.objects(Item.self)
+    IncrementHelper.showRatesController()
+
   }
 
   override func loadView()
@@ -66,21 +73,5 @@ class ViewController: UIViewController
     tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
 }
 

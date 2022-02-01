@@ -24,10 +24,9 @@ extension ViewController
         let item = Item()
         item.task = text
         let realm = try! Realm()
-                try! realm.write{
-                    realm.add(item)
-                }
-//        characters.append(text)
+        try! realm.write{
+          realm.add(item)
+        }
         DispatchQueue.main.async
         {
           tableView.reloadData()
@@ -59,13 +58,9 @@ extension ViewController
       if let txtField = alertController.textFields?.first, let text = txtField.text
       {
 
-//
-
         let delElement = self.characters[indextElement]
-        print("Удалить \(characters[indextElement].task)")
-        print("Удалить \(delElement)")
 
-      let item = Item()
+        let item = Item()
         item.task = text
 
         let realm = try! Realm()
@@ -77,17 +72,6 @@ extension ViewController
         {
           tableView.reloadData()
         }
-
-
-
-
-
-
-//       let new =  item.task = text
-//        print("new = \(new)")
-//        characters.remove(at: indextElement)
-//        characters.insert(text, at: indextElement)
-        
       }
     }
 
