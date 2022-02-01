@@ -17,7 +17,7 @@ extension ViewController: UITableViewDelegate
     return .delete
   }
 
-//MARK:  - Нажатие на ячейку
+  //MARK:  - Нажатие на ячейку
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
   {
 
@@ -73,5 +73,16 @@ extension ViewController: UITableViewDataSource
   //MARK: - Высота ячейки
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 50
+  }
+
+  //MARK: - Анимация
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+  {
+
+    cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1.0)
+    UIView.animate(withDuration: 1.0,
+                   animations: {
+      cell.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+    }, completion: nil)
   }
 }
