@@ -20,7 +20,6 @@ extension ViewController: UITableViewDelegate
 //MARK:  - Нажатие на ячейку
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
   {
-    let item = self.characters[indexPath.row]
 
     showEDITAlertWithTextField(task: characters[indexPath.row].task, indextElement: indexPath.row)
     print(characters[indexPath.row])
@@ -37,12 +36,9 @@ extension ViewController: UITableViewDelegate
 
       let realm = try! Realm()
       let item = self.characters[indexPath.row]
-      print(item)
       try! realm.write({
         realm.delete(item)
       })
-//      tableView.beginUpdates()
-//      characters.remove(at: indexPath.row)
       tableView.deleteRows(at: [indexPath], with: .fade)
     }
     deleteAction.backgroundColor = .systemBlue
@@ -65,8 +61,6 @@ extension ViewController: UITableViewDataSource
   //MARK: - Заполнение ячейки и настройка
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//    let item = self.characters[indexPath.row]
-//    cell.textLabel?.text = item.task
     cell.layer.borderWidth = CGFloat(3)
     cell.layer.borderColor = UIColor(red: 189/255, green: 238/255, blue: 251/255, alpha: 100).cgColor
     cell.textLabel?.text = characters[indexPath.row].task
