@@ -7,7 +7,6 @@
 
 import RealmSwift
 
-
 class Item: Object
 {
   @objc dynamic var task: String = ""

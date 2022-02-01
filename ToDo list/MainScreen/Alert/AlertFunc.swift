@@ -8,7 +8,6 @@
 import UIKit
 import RealmSwift
 
-
 //MARK: - Создать заметку 
 extension ViewController
 {

@@ -39,7 +39,7 @@ class ViewControllerSpash: UIViewController
   private func animate(){
     UIView.animate(withDuration: 1)
     {
-      let size = self.view.frame.width * 3
+      let size  = self.view.frame.width * 3
       let diffX = size - self.view.frame.size.width
       let diffY = self.view.frame.size.height - size
       self.imageView.frame = CGRect(x: -(diffX/2), y: diffY/2, width: size, height: size)
