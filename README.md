@@ -1,5 +1,7 @@
 # Тестовое задание на стажировку в ЦФТ
 <img width="449" alt="изображение" src="https://user-images.githubusercontent.com/45273279/152036420-886ec8f5-3346-48bb-8506-d565bab1c046.png">
+
+
 ```sh
 pod init
 open Podfile
