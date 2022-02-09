@@ -10,8 +10,6 @@
 
 ![test](https://user-images.githubusercontent.com/45273279/152042432-c769aa3c-c7c0-40a1-b6b1-cd5111b69039.gif)
 
-
-
 Перед запуском:
 ```sh
 pod init
